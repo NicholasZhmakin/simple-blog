@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Post = ({ title, body, id }) => {
+interface Props {
+  title: string;
+  body: string;
+  id: string;
+}
+
+const Post: React.FC<Props> = ({ title, body, id }) => {
   return (
     <PostCard>
       <Link to={"/posts/" + id}>
